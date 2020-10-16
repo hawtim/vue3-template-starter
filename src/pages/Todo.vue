@@ -1,36 +1,38 @@
 <template>
-<div class="todo-list">
-  <div>
-    <label>新增待办</label>
-    <input v-model="state.todo" @keyup.enter="handleAddTodo">
-  </div>
-  <div>
-    <h3>待办列表({{todos.length}})</h3>
+<div>
+  <div class="todo-list">
+    <div>
+      <label>新增待办</label>
+      <input v-model="state.todo" @keyup.enter="handleAddTodo">
+    </div>
+    <div>
+      <h3>待办列表({{todos.length}})</h3>
+      <ul>
+        <li v-for="item in todos" :key="item.id" @click="handleChangeStatus(item, true)">
+          <input type="checkbox">
+          <label>{{item.text}}</label>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>已办列表({{dones.length}})</h3>
+    </div>
     <ul>
-      <li v-for="item in todos" :key="item.id" @click="handleChangeStatus(item, true)">
-        <input type="checkbox">
+      <li v-for="item in dones" :key="item.id" @click="handleChangeStatus(item, false)">
+        <input type="checkbox" checked>
         <label>{{item.text}}</label>
       </li>
     </ul>
   </div>
-  <div>
-    <h3>已办列表({{dones.length}})</h3>
+  <!-- 模块2 -->
+  <div class="name" @click="handleClickName">
+    {{nameVal.name + nameVal.count}}
   </div>
-  <ul>
-    <li v-for="item in dones" :key="item.id" @click="handleChangeStatus(item, false)">
-      <input type="checkbox" checked>
-      <label>{{item.text}}</label>
-    </li>
-  </ul>
+  <!-- 双向数据绑定 -->
+  <input type="text" v-model="inputVal">
+  <p>{{inputVal}}</p>
+  <p>当前鼠标x：{{ x }},y：{{ y }}</p>
 </div>
-<!-- 模块2 -->
-<div class="name" @click="handleClickName">
-  {{nameVal.name + nameVal.count}}
-</div>
-<!-- 双向数据绑定 -->
-<input type="text" v-model="inputVal">
-<p>{{inputVal}}</p>
-<p>当前鼠标x：{{ x }},y：{{ y }}</p>
 </template>
 
 <script lang="ts">
