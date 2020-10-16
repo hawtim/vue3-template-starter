@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "lib",
+        // https://github.com/ant-design/babel-plugin-import#style
+        "style": "css"
+      },
+      "antd"
+    ]
+  ]
+}
