@@ -1,0 +1,27 @@
+{
+  "name": "suono-player",
+  "version": "1.0.0",
+  "description": "A audio player using suono and vue3",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawtim/suono-player.git"
+  },
+  "author": "hawtim<hawtimzhang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hawtim/suono-player/issues"
+  },
+  "homepage": "https://github.com/hawtim/suono-player#readme",
+  "dependencies": {
+    "vue": "^3.0.0-rc.1"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.1",
+    "@vue/compiler-sfc": "^3.0.0-rc.1"
+  }
+}
